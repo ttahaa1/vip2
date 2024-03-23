@@ -1,6 +1,7 @@
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
 import os
+from telethon import events
 
 # استدعاء المتغيرات البيئية
 APP_ID = os.environ.get("APP_ID")
