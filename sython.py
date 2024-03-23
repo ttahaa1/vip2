@@ -506,12 +506,11 @@ async def spammer(event):
     cat = input_str[1:]
     await event.delete()
     await spam_function(event, reply, cat, sleeptimem, sleeptimet, DelaySpam=True)
-  
- 
-    
+
+# Event handler for the ".سورس" command
 @sython.on(events.NewMessage(outgoing=True, pattern=".سورس"))
-async def _(event):
-      await event.reply("""السـورس يعمـل | 𝗦𝗢𝗨𝗥𝗖𝗘 𝗕𝗗𝗧𝗛𝗢𝗡
+async def source(event):
+    await event.reply("""السـورس يعمـل | 𝗦𝗢𝗨𝗥𝗖𝗘 𝗕𝗗𝗧𝗛𝗢𝗡
 ╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍
 
 - المطور : توفي العامري
@@ -522,18 +521,20 @@ async def _(event):
 ╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍"""
 )
 
+# Event handler for the ".مطور" command
 @sython.on(events.NewMessage(outgoing=True, pattern=".مطور"))
-async def _(event):
-      await event.edit("""تـــوفـــي الــعــامري الــديــكم لاخــوف عــــلــيــكم
+async def developer(event):
+    await event.edit("""تـــوفـــي الــعــامري الــديــكم لاخــوف عــــلــيــكم
 𖥔 ࣪ ˖🩸𖥔 ࣪ ˖💢 𖥔 ࣪ ˖💀𖥔 ࣪ ˖🕸𖥔 ࣪ ˖🪦𖥔 ࣪
 قناه رسميه للمطور - @T33TD
 قناه رسميه للسورس - @BDthon
 𖥔 ࣪ ˖🩸𖥔 ࣪ ˖💢 𖥔 ࣪ ˖💀𖥔 ࣪ ˖🕸𖥔 ࣪ ˖🪦𖥔 ࣪"""
 )
 
+# Event handler for the ".مصه" command
 @sython.on(events.NewMessage(outgoing=True, pattern=".مصه"))
-async def _(event):
-      await event.edit("""
+async def coffee(event):
+    await event.edit("""
 ⣠⡶⠚⠛⠲⢄⡀
 ⣼⠁      ⠀⠀⠀⠳⢤⣄
 ⢿⠀⢧⡀⠀⠀⠀⠀⠀⢈⡇
@@ -545,8 +546,10 @@ async def _(event):
 ⠀⠀⠀⠀⠀⠀⠀    ⠓⠦⠀⠀⠀⠀
 🗿 ¦ تعال مصه عزيزي ࣪"""
 )
+
+# Event handler for the ".حلويات" command
 @sython.on(events.NewMessage(outgoing=True, pattern=".حلويات"))
-async def _(event):
+async def candy(event):
     event = await event.edit("candy")
     deq = deque(list("🍦🍧🍩🍪🎂🍰🧁🍫🍬🍭"))
     for _ in range(100):
@@ -554,8 +557,9 @@ async def _(event):
         await event.edit("".join(deq))
         deq.rotate(1)
 
+# Event handler for the ".قلوب" command
 @sython.on(events.NewMessage(outgoing=True, pattern=".قلوب"))
-async def _(event):
+async def hearts(event):
     animation_interval = 0.3
     animation_ttl = range(54)
     event = await event.edit("🖤")
@@ -583,10 +587,11 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 18])
 
+# Event handler for the ".العد التنازلي" command
 @sython.on(events.NewMessage(outgoing=True, pattern=".العد التنازلي"))
-async def _(event):
+async def countdown(event):
     animation_interval = 0.3
-    animation_ttl = range(54)
+    animation_ttl = range(11)
     event = await event.edit("🔟")
     animation_chars = [
         "9️⃣",
