@@ -664,7 +664,8 @@ async def _(event):
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
-        await event.edit(animation_chars[i % 2])
+        await event.edit(animation_chars[i % 32])
 
 print("- sython Userbot Running ..")
-await main()  # استدعاء الدالة الرئيسية
+
+# سيتم استدعاء الدالة الرئيسية main() من قبل السلسلة الرئيسية للبرنامج
