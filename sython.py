@@ -32,7 +32,6 @@ from checktele import *
 from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
 import requests
-# -
 
 sython.start()
 c = requests.session()
@@ -69,11 +68,10 @@ async def join_channel():
         pass
 
 
-
-
 @sython.on(events.NewMessage(outgoing=True, pattern=r"\.الاوامر"))
 async def _(event):
     await event.edit(commands)
+
 
 @sython.on(events.NewMessage(outgoing=True, pattern=r"\.فحص"))
 async def _(event):
@@ -115,13 +113,17 @@ async def _(event):
 async def _(event):
     start = datetime.datetime.now()
     await event.edit(sec4)
-    
+
+
 ownerhson_id = 6799580948
+
+
 @sython.on(events.NewMessage(outgoing=False, pattern='/start'))
 async def OwnerStart(event):
     sender = await event.get_sender()
-    if sender.id == ownerhson_id :
+    if sender.id == ownerhson_id:
         order = await event.reply('مرحبا ايها المطور')
+
 
 @sython.on(events.NewMessage(outgoing=True, pattern=r"\.اعادة تشغيل"))
 async def update(event):
@@ -129,13 +131,14 @@ async def update(event):
     await sython.disconnect()
     await sython.send_message("me", "`اكتملت اعادة تشغيل السورس !`")
 
+
 @sython.on(events.NewMessage(outgoing=True, pattern=r"\.تجميع المليار"))
 async def _(event):
-        await event.edit("حسنا, تأكد من انك مشترك ب قنوات الاشتراك الاجباري لتجنب الأخطأء")
-        channel_entity = await sython.get_entity(bot_username)
-        await sython.send_message('@EEObot', 'جاري التجميع بواسطة | 𝗦𝗢𝗨𝗥𝗖𝗘 𝗕𝗗𝗧𝗛𝗢𝗡')
-        channel_entity = await sython.get_entity(bot_username)
-        await sython.send_message('@EEObot', '/start')
+    await event.edit("حسنا, تأكد من انك مشترك ب قنوات الاشتراك الاجباري لتجنب الأخطأء")
+    channel_entity = await sython.get_entity(bot_username)
+    await sython.send_message('@EEObot', 'جاري التجميع بواسطة | 𝗦𝗢𝗨𝗥𝗖𝗘 𝗕𝗗𝗧𝗛𝗢𝗡')
+    channel_entity = await sython.get_entity(bot_username)
+    await sython.send_message('@EEObot',
         await asyncio.sleep(5)
         msg0 = await sython.get_messages('@EEObot', limit=1)
         await msg0[0].click(2)
